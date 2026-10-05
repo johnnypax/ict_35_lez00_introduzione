@@ -18,7 +18,6 @@ jobs:
 
       - name: Scrivi file
         run: |
-          echo "Ciao, sono il primo job!" > file.txt
           echo "File scritto con successo!"
 
       - name: Upload artefatto
