@@ -1,0 +1,36 @@
+name: Stage sequenziali
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  scrivi-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Scrivi file
+        run: |
+          echo "Ciao, sono il primo job!" > file.txt
+          echo "File scritto con successo!"
+
+      - name: Upload artefatto
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-file
+          path: file.txt
+
+  # check-file:
+  #   needs: scrivi-file
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
