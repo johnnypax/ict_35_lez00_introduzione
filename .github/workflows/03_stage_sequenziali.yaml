@@ -32,8 +32,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Download artefatto
-      uses: actions/download-artifact@v4
+      - name: Download artefatto
+        uses: actions/download-artifact@v4
         with:
           name: generated-file
 
