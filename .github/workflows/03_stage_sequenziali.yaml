@@ -22,7 +22,7 @@ jobs:
           echo "File scritto con successo!"
 
       - name: Upload artefatto
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated-file
           path: file.txt
